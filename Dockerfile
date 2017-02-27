@@ -10,12 +10,11 @@ RUN apk add --no-cache git python3 python3-dev gcc musl-dev zlib-dev libffi-dev 
     apk del python3-dev gcc musl-dev zlib-dev libffi-dev openssl-dev && \
     rm -rf /var/cache/apk/* /root/.cache /tmp/* 
 
-COPY scm-source.json /
-
-COPY requirements.txt /
-RUN pip3 install -r /requirements.txt
 
 RUN git clone -b 'v0.7' --single-branch --depth 1 https://github.com/hjacobs/kube-ops-view.git  kube_ops_view
+RUN pip3 install -r /kube_ops_view/requirements.txt
+
+
 
 ARG VERSION=dev
 RUN sed -i "s/__version__ = .*/__version__ = '${VERSION}'/" /kube_ops_view/__init__.py
