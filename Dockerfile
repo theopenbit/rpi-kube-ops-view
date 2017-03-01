@@ -1,4 +1,4 @@
-FROM nventiveux/docker-alpine-rpi:3.5
+FROM hypriot/rpi-alpine:3.5
 MAINTAINER theOpenbit <tob at schoenesnetz.de>
 
 EXPOSE 8080
