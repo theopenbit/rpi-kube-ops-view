@@ -2,6 +2,7 @@ FROM nventiveux/docker-alpine-rpi:3.5
 MAINTAINER theOpenbit <tob at schoenesnetz.de>
 
 EXPOSE 8080
+RUN apk add --no-cache python3 python3-dev gcc musl-dev zlib-dev libffi-dev openssl-dev ca-certificates 
 
 RUN apk add --no-cache python3 python3-dev gcc musl-dev zlib-dev libffi-dev openssl-dev ca-certificates && \
     python3 -m ensurepip && \
