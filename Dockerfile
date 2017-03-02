@@ -7,7 +7,7 @@ EXPOSE 8080
 RUN apk add --no-cache git python3 python3-dev gcc musl-dev zlib-dev libffi-dev openssl-dev ca-certificates && \
     python3 -m ensurepip && \
     pip3 install --upgrade pip setuptools gevent && \
-    apk del python3-dev gcc musl-dev zlib-dev libffi-dev openssl-dev && \
+    apk del python3-dev gcc musl-dev zlib-dev libffi-dev openssl-dev
     
 #RUN rm -r /usr/lib/python*/ensurepip && \
 #    rm -rf /var/cache/apk/* /root/.cache /tmp/* 
