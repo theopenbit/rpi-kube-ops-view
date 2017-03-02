@@ -12,7 +12,7 @@ RUN apk add --no-cache git python3 python3-dev gcc musl-dev zlib-dev libffi-dev 
 #RUN rm -r /usr/lib/python*/ensurepip && \
 #    rm -rf /var/cache/apk/* /root/.cache /tmp/* 
 
-RUN git clone -b 'v0.7' --single-branch --depth 1 https://github.com/hjacobs/kube-ops-view.git  kube_ops_view
+RUN git clone -b '0.7.1' --single-branch --depth 1 https://github.com/hjacobs/kube-ops-view.git  kube_ops_view
 RUN pip3 install -r /kube_ops_view/requirements.txt
 
 
