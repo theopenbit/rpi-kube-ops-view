@@ -18,7 +18,7 @@ RUN pip3 install -r /kube_ops_view/requirements.txt
 
 
 ARG VERSION=dev
-RUN sed -i "s/__version__ = .*/__version__ = '${VERSION}'/" /kube-ops-view/kube_ops_view/__init__.py
+RUN sed -i "s/__version__ = .*/__version__ = '${VERSION}'/" /kube_ops_view/kube_ops_view/__init__.py
 
 WORKDIR /
 ENTRYPOINT ["/usr/bin/python3", "-m", "kube_ops_view"]
