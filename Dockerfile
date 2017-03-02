@@ -14,7 +14,7 @@ RUN apk add --no-cache nodejs git python3 python3-dev gcc musl-dev zlib-dev libf
 #    rm -rf /var/cache/apk/* /root/.cache /tmp/* 
 
 RUN git clone -b '0.7.1' --single-branch --depth 1 https://github.com/hjacobs/kube-ops-view.git  kube_ops_view
-RUN cd /kube_ops_view && npm install -g eslint
+RUN cd /kube_ops_view && npm install
 RUN cd /kube_ops_view && npm run build
 
 RUN pip3 install -r /kube_ops_view/requirements.txt
