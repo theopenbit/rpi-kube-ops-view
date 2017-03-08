@@ -22,7 +22,7 @@ RUN pip3 install -r /kube_ops_view_git/requirements.txt
 
 
 RUN sed -i "s/__version__ = .*/__version__ = 'dev'/" /kube_ops_view_git/kube_ops_view/__init__.py
-RUN mv /kube_ops_view_git/kube_ops_view / && rm /kube_ops_view_git && apk del nodejs
+RUN mv /kube_ops_view_git/kube_ops_view / && rm -rf /kube_ops_view_git && apk del nodejs
 WORKDIR /kube_ops_view
 ENTRYPOINT ["/usr/bin/python3", "-m", "kube_ops_view"]
 
